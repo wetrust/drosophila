@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-100">
+<html class="h-100" lang="es">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://drosophila.ml 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
@@ -28,11 +28,10 @@
                 </div>
             </header>
             <div id="dw-p1" class="bmd-layout-drawer bg-faded">
-                <header><a class="navbar-brand">_PASSPORT</a></header>
+                <header><a class="navbar-brand">SCATD</a></header>
                 <ul class="list-group">
-                    <a class="list-group-item" id="wetrust.menu.inicio">Inicio</a>
-                    <a class="list-group-item">Link 2</a>
-                    <a class="list-group-item" id="wetrust.menu.estado" >Estado</a>
+                    <a class="list-group-item" href="<?php echo Config::get('URL'); ?>">Inicio</a>
+                    <a class="list-group-item" href="<?php echo Config::get('URL'); ?>profile/index">Perfiles</a>
                 </ul>
             </div>
             <main class="bmd-layout-content">
