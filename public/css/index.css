@@ -32,8 +32,6 @@ body {
 
 .campo{
     background-image: url('../img/campo.svg');
-    width: 100vw;
-    height: 100vh;
-    background-position: bottom;
+    background-position: top;
     background-size: cover;
 }
