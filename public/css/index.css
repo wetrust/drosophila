@@ -29,3 +29,11 @@ body {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+.campo{
+    background-image: url('../img/campo.svg');
+    width: 100vw;
+    height: 100vh;
+    background-position: bottom;
+    background-size: cover;
+}

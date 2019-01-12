@@ -12,6 +12,10 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.min.css">
         <link rel="stylesheet" type="text/css" href="css/solid.css">
         <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/popper.js"></script>
+        <script type="text/javascript" src="js/bootstrap-material-design.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
         <title>Drosophila suzukii | Sistema Chileno de alerta temprana</title>
     </head>
     <body class="h-100">
@@ -31,6 +35,7 @@
                 <header><a class="navbar-brand">SCATD</a></header>
                 <ul class="list-group">
                     <a class="list-group-item" href="<?php echo Config::get('URL'); ?>">Inicio</a>
+                    <a class="list-group-item" href="<?php echo Config::get('URL'); ?>index/diagnostico">Diagnóstico</a>
                     <a class="list-group-item" href="<?php echo Config::get('URL'); ?>profile/index">Perfiles</a>
                 </ul>
             </div>
