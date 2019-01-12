@@ -12,14 +12,14 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.min.css">
         <link rel="stylesheet" type="text/css" href="css/solid.css">
         <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
-        <title>WeTrust Passport</title>
+        <title>Drosophila suzukii | Sistema Chileno de alerta temprana</title>
     </head>
     <body class="h-100">
         <div class="bmd-layout-container bmd-drawer-f-r bmd-drawer-overlay">
             <header class="bmd-layout-header bg-wetrust">
                 <div class="navbar text-white bg-faded">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item"><strong>_PASSPORT</strong></li>
+                        <li class="nav-item"><strong>SCATD</strong></li>
                     </ul>
                     <button class="btn mb-0 pb-0 text-white" type="button" data-toggle="drawer" data-target="#dw-p1">
                         <span class="sr-only">Toggle drawer</span>
