@@ -96,10 +96,10 @@ return array(
      */
     'COOKIE_RUNTIME' => 1209600,
     'COOKIE_PATH' => '/',
-    'COOKIE_DOMAIN' => "",
+    'COOKIE_DOMAIN' => ".drosophila.ml",
     'COOKIE_SECURE' => false,
     'COOKIE_HTTP' => true,
-    'COOKIE_NAME' => "PHPSESSID",
+    'COOKIE_NAME' => "drosophila",
     'SESSION_RUNTIME' => 604800,
     /**
      * Configuration for: Avatars/Gravatar support

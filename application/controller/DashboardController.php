@@ -23,4 +23,15 @@ class DashboardController extends Controller
     {
         $this->View->render('dashboard/index');
     }
+
+    public function process()
+    {
+        $this->View->render('dashboard/process');
+    }
+
+    public function process_action()
+    {
+        MapasModel::loadXmlSAG();
+        $this->View->render('dashboard/process');
+    }
 }
