@@ -21,6 +21,6 @@ class IndexController extends Controller
 
     public function diagostico()
     {
-        $this->View->render('index/diagostico');
+        $this->View->render('index/diagnostico');
     }
 }
