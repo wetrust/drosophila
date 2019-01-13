@@ -3,6 +3,9 @@
 </div>
 <div class="container">
     <div class="card">
+        <div class="card-header bg-danger d-none" id="header.algoritmo">
+            <h3 class="text-white text-center">Lo siento</h3>
+        </div>
         <div class="card-body p-0" id="card.bienvenida">
             <h1 class="card-title text-center mt-4 mx-4">Diagnóstico inical para determinar riesgo de Drosophila suzukii</h1>
             <div class="media mt-2 mx-4">
@@ -23,14 +26,14 @@
             </div>
             <button class="btn mt-2 btn-outline-primary" id="diagnostico.uno">Siguiente paso</button>
         </div>
-        <div class="card-header bg-danger" id="header.algoritmo">
-            <p class="text-white">Lo siento</p>
-        </div>
         <div class="card-body" id="card.algoritmo" style="display:none">
             <h1 class="card-title text-center">No hay algoritmo</h1>
             <p class="text-center">Todavía no podemos determinar el riesgo para este tipo de cultivo</p>
             <img alt="termita" src="img/termita.svg" class="ml-3 w-50">
             <button class="btn mt-2 btn-outline-primary" id="diagnostico.reset">Volver a empezar</button>
+        </div>
+        <div class="card-footer bg-secondary">
+            <h3 class="text-white text-center">Lo siento</h3>
         </div>
     </div>
 </div>
