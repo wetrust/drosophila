@@ -10,6 +10,7 @@ $(document).ready(function() {
     });
 });
 
+var soporteVibracion = "vibrate" in navigator;
 var application = {
     steps: 5,
     step: 0,
@@ -62,6 +63,9 @@ var application = {
             case 1:
                 application.uno();
                 break;
+            case 2:
+                application.dos();
+                break;
         }
     },
     bienvenida: function(){
@@ -86,6 +90,33 @@ var application = {
         $("#diagnostico\\.continuar").html("Realizar <br>Diagnóstico").removeClass("d-none").addClass("d-block");
     },
     uno: function(){
+        let cultivo = $("#cultivo option:selected").text();
+
+        if (cultivo == "Seleccione"){
+            if (soporteVibracion = true){
+                navigator.vibrate([1000, 500, 2000]);
+            }
+        }
+        if (cultivo == "Arándanos"){
+            $("#card\\.uno").fadeOut();
+            $("#card\\.dos").delay(100).fadeIn();
+            $("#progreso").css({"width":"20%"}).animate({"width":"40%"}, "slow");
+            application.step = 2;
+            $("#fenologia").empty();
+            $.each(application.fenologia, function(i,element){
+                $("#fenologia").append('<option value="' + i + '" data-riesgo="' + element.riesgo +'">' + element.texto + '</option>');
+            });
+        }
+        else{
+            $("#progreso").addClass("bg-danger").removeClass("bg-success").css({"width":"20%"}).animate({"width":"100%"}, "slow");
+            $("#header\\.algoritmo").removeClass("d-none");
+            $("#card\\.uno").fadeOut();
+            $("#card\\.algoritmo").delay(100).fadeIn();
+            $("#diagnostico\\.reset").removeClass("d-none").addClass("d-block");
+            $("#diagnostico\\.continuar").removeClass("d-block").addClass("d-none");
+        }
+    },
+    dos: function(){
         let cultivo = $("#cultivo option:selected").text();
 
         if (cultivo == "Arándanos"){
