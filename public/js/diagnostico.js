@@ -50,11 +50,7 @@ var application = {
         }
     ],
     bienvenida: function(){
-        $("#card\\.bienvenida").animate({
-            opacity: 'toggle'
-        }).addClass("d-none");
-        $("#card\\.uno").removeClass("d-none").animate({
-            opacity: 'toggle'
-        });
+        $("#card\\.bienvenida").fadeOut();
+        $("#card\\.uno").fadeIn();
     }
 }
