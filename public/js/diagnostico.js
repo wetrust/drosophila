@@ -94,7 +94,12 @@ var application = {
 
         if (cultivo == "Seleccione"){
             if (soporteVibracion = true){
-                navigator.vibrate([1000, 500, 2000]);
+                navigator.vibrate(1000);
+                let options =  {
+                    content: "Seleccione un cultivo, donde dice 'Seleccione'",style: "toast",timeout: 2000
+                }
+                $.snackbar(options);
+                $("#cultivo").addClass("bg-warning");
             }
         }
         else if (cultivo == "Arándanos"){
@@ -106,6 +111,7 @@ var application = {
             $.each(application.fenologia, function(i,element){
                 $("#fenologia").append('<option value="' + i + '" data-riesgo="' + element.riesgo +'">' + element.texto + '</option>');
             });
+            $("#cultivo").removeClass("bg-warning");
         }
         else{
             $("#progreso").addClass("bg-danger").removeClass("bg-success").css({"width":"20%"}).animate({"width":"100%"}, "slow");
@@ -114,6 +120,7 @@ var application = {
             $("#card\\.algoritmo").delay(100).fadeIn();
             $("#diagnostico\\.reset").removeClass("d-none").addClass("d-block");
             $("#diagnostico\\.continuar").removeClass("d-block").addClass("d-none");
+            $("#cultivo").removeClass("bg-warning");
         }
     },
     dos: function(){
