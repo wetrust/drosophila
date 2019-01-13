@@ -66,7 +66,7 @@ var application = {
     },
     bienvenida: function(){
         $("#card\\.bienvenida").fadeOut();
-        $("#card\\.uno").fadeIn();
+        $("#card\\.uno").delay(100).fadeIn();
         $("#progreso").css({"width":"100%"}).animate({"width":"20%"}, "slow");
         application.step = 1;
         $("#cultivo").empty();
@@ -77,7 +77,7 @@ var application = {
     reset: function(){
         $("#card\\.algoritmo").fadeOut();
         $("#header\\.algoritmo").fadeOut();
-        $("#card\\.bienvenida").fadeIn();
+        $("#card\\.bienvenida").delay(100).fadeIn();
         $("#progreso").css({"width":"100%"}).removeClass("bg-danger").addClass("bg-success");
         $("#diagnostico\\.reset").removeClass("d-block").addClass("d-none");
         application.step = 0;
@@ -90,7 +90,7 @@ var application = {
 
         if (cultivo == "Arándanos"){
             $("#card\\.uno").fadeOut();
-            $("#card\\.dos").fadeIn();
+            $("#card\\.dos").delay(100).fadeIn();
             $("#progreso").css({"width":"20%"}).animate({"width":"40%"}, "slow");
             application.step = 2;
             $("#fenologia").empty();
@@ -102,7 +102,7 @@ var application = {
             $("#progreso").addClass("bg-danger").removeClass("bg-success").css({"width":"20%"}).animate({"width":"100%"}, "slow");
             $("#header\\.algoritmo").removeClass("d-none");
             $("#card\\.uno").fadeOut();
-            $("#card\\.algoritmo").fadeIn();
+            $("#card\\.algoritmo").delay(100).fadeIn();
             $("#diagnostico\\.reset").removeClass("d-none").addClass("d-block");
             $("#diagnostico\\.continuar").removeClass("d-block").addClass("d-none");
         }
