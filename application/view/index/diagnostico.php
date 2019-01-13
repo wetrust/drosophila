@@ -23,7 +23,6 @@
                 <label for="cultivo">Cultivo:</label>
                 <select class="form-control" id="cultivo"></select>
             </div>
-            <button class="btn mt-2 btn-outline-primary" id="diagnostico.uno">Siguiente paso</button>
         </div>
         <div class="card-body" id="card.dos" style="display:none">
             <h1 class="card-title text-center">Paso 2</h1>
@@ -32,7 +31,6 @@
                 <label for="fenologia">Fenologia:</label>
                 <select class="form-control" id="fenologia"></select>
             </div>
-            <button class="btn mt-2 btn-outline-primary" id="diagnostico.dos">Siguiente paso</button>
         </div>
         <div class="card-body" id="card.algoritmo" style="display:none">
             <h1 class="card-title text-center">No hay algoritmo</h1>
@@ -40,7 +38,7 @@
             <img alt="termita" src="img/termita.svg" class="w-50 d-block mx-auto">
         </div>
         <div class="card-footer bg-secondary">
-            <button class="btn d-block mx-auto btn-outline-primary" id="diagnostico.continuar">Realizar <br>Diagnóstico</button>
+            <button class="btn d-block mx-auto btn-outline-light" id="diagnostico.continuar">Realizar <br>Diagnóstico</button>
             <button class="btn mx-auto btn-outline-light d-none" id="diagnostico.reset">Volver a empezar</button>
         </div>
     </div>

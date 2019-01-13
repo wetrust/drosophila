@@ -54,13 +54,13 @@ var application = {
         }
     ],
     controller: function(){
-        switch (this.step) {
+        switch (application.step) {
             case 0:
-                this.bienvenida();
+                application.bienvenida();
                 $("#diagnostico\\.continuar").text("Siguiente paso");
                 break;
             case 1:
-                this.uno();
+                application.uno();
                 break;
         }
     },
