@@ -81,6 +81,7 @@ var application = {
             $("#header\\.algoritmo").removeClass("d-none");
             $("#card\\.uno").fadeOut();
             $("#card\\.algoritmo").fadeIn();
+            $("#diagnostico\\.reset").removeClass("d-none");
         }
     }
 }

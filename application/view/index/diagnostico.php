@@ -26,14 +26,22 @@
             </div>
             <button class="btn mt-2 btn-outline-primary" id="diagnostico.uno">Siguiente paso</button>
         </div>
+        <div class="card-body" id="card.dos" style="display:none">
+            <h1 class="card-title text-center">Paso 2</h1>
+            <p class="text-center">Seleccione el estado fenologico presente en su cultivo</p>
+            <div class="form-group">
+                <label for="fenologia">Fenologia:</label>
+                <select class="form-control" id="fenologia"></select>
+            </div>
+            <button class="btn mt-2 btn-outline-primary" id="diagnostico.dos">Siguiente paso</button>
+        </div>
         <div class="card-body" id="card.algoritmo" style="display:none">
             <h1 class="card-title text-center">No hay algoritmo</h1>
             <p class="text-center">Todavía no podemos determinar el riesgo para este tipo de cultivo</p>
             <img alt="termita" src="img/termita.svg" class="ml-3 w-50">
-            <button class="btn mt-2 btn-outline-primary" id="diagnostico.reset">Volver a empezar</button>
         </div>
         <div class="card-footer bg-secondary">
-            <h3 class="text-white text-center">Lo siento</h3>
+            <button class="btn mt-2 btn-outline-primary d-none" id="diagnostico.reset">Volver a empezar</button>
         </div>
     </div>
 </div>
