@@ -14,6 +14,7 @@
         <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/popper.js"></script>
+        <script type="text/javascript" src="js/snackbar.min.js"></script>
         <script type="text/javascript" src="js/bootstrap-material-design.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <title>Drosophila suzukii | Sistema Chileno de alerta temprana</title>
