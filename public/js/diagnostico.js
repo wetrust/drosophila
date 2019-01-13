@@ -52,5 +52,6 @@ var application = {
     bienvenida: function(){
         $("#card\\.bienvenida").fadeOut();
         $("#card\\.uno").fadeIn();
+        $("#progreso").css({"width":"100%"}).animate({"width":"20%"}, "slow");
     }
 }
