@@ -96,7 +96,7 @@ var application = {
             if (soporteVibracion = true){
                 navigator.vibrate(1000);
                 let options =  {
-                    content: "Seleccione un cultivo, donde dice 'Seleccione'",style: "toast",timeout: 2000
+                    content: "Seleccione un cultivo",style: "toast",timeout: 2000
                 }
                 $.snackbar(options);
                 $("#cultivo").addClass("bg-warning");
