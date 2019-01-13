@@ -8,6 +8,10 @@ $(document).ready(function() {
     $("#diagnostico\\.uno").on("click", function(){
         application.uno();
     });
+
+    $("#diagnostico\\.reset").on("click", function(){
+        application.reset();
+    });
 });
 
 var application = {
@@ -62,6 +66,16 @@ var application = {
         $.each(application.cultivos, function(i,element){
             $("#cultivo").append('<option value="' + i + '">' + element + '</option>');
         });
+    },
+    reset: function(){
+        $("#card\\.algoritmo").fadeOut();
+        $("#header\\.algoritmo").fadeOut();
+        $("#card\\.bienvenida").fadeIn();
+        $("#progreso").css({"width":"100%"}).removeClass("bg-danger").addClass("bg-success");
+        $("#diagnostico\\.reset").addClass("d-none");
+        application.step = 0;
+        $("#cultivo").empty();
+        $("#fenologia").empty();
     },
     uno: function(){
         let cultivo = $("#cultivo option:selected").text();

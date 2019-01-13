@@ -38,10 +38,10 @@
         <div class="card-body" id="card.algoritmo" style="display:none">
             <h1 class="card-title text-center">No hay algoritmo</h1>
             <p class="text-center">Todavía no podemos determinar el riesgo para este tipo de cultivo</p>
-            <img alt="termita" src="img/termita.svg" class="ml-3 w-50">
+            <img alt="termita" src="img/termita.svg" class="w-50 d-block mx-auto">
         </div>
         <div class="card-footer bg-secondary">
-            <button class="btn mt-2 btn-outline-primary d-none" id="diagnostico.reset">Volver a empezar</button>
+            <button class="btn d-block mx-auto btn-outline-light d-none" id="diagnostico.reset">Volver a empezar</button>
         </div>
     </div>
 </div>
