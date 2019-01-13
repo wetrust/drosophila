@@ -97,7 +97,7 @@ var application = {
                 navigator.vibrate([1000, 500, 2000]);
             }
         }
-        if (cultivo == "Arándanos"){
+        else if (cultivo == "Arándanos"){
             $("#card\\.uno").fadeOut();
             $("#card\\.dos").delay(100).fadeIn();
             $("#progreso").css({"width":"20%"}).animate({"width":"40%"}, "slow");
