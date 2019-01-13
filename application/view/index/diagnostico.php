@@ -14,7 +14,7 @@
                 <img alt="Campesino svg" src="img/campesino.svg" class="ml-3 w-50">
             </div>
         </div>
-        <div class="card-body" id="card.uno" style="opacity:0">
+        <div class="card-body d-none" id="card.uno" style="opacity:0">
             <h1 class="card-title text-center">Paso 1</h1>
         </div>
     </div>

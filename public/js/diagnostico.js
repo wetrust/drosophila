@@ -52,8 +52,8 @@ var application = {
     bienvenida: function(){
         $("#card\\.bienvenida").animate({
             opacity: 'toggle'
-        });
-        $("#card\\.uno").animate({
+        }).addClass("d-none");
+        $("#card\\.uno").removeClass("d-none").animate({
             opacity: 'toggle'
         });
     }
