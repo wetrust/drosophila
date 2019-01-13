@@ -1,12 +1,8 @@
 $(document).ready(function() { 
     $('main').addClass("campo");
 
-    $("#diagnostico\\.bienvenida").on("click", function(){
-        application.bienvenida();
-    });
-
-    $("#diagnostico\\.uno").on("click", function(){
-        application.uno();
+    $("#diagnostico\\.continuar").on("click", function(){
+        application.controller();
     });
 
     $("#diagnostico\\.reset").on("click", function(){
@@ -57,6 +53,17 @@ var application = {
             riesgo: 1
         }
     ],
+    controller: function(){
+        switch (this.step) {
+            case 0:
+                this.bienvenida();
+                $("#diagnostico\\.continuar").text("Siguiente paso");
+                break;
+            case 1:
+                this.uno();
+                break;
+        }
+    },
     bienvenida: function(){
         $("#card\\.bienvenida").fadeOut();
         $("#card\\.uno").fadeIn();
@@ -72,10 +79,11 @@ var application = {
         $("#header\\.algoritmo").fadeOut();
         $("#card\\.bienvenida").fadeIn();
         $("#progreso").css({"width":"100%"}).removeClass("bg-danger").addClass("bg-success");
-        $("#diagnostico\\.reset").addClass("d-none");
+        $("#diagnostico\\.reset").removeClass("d-block").addClass("d-none");
         application.step = 0;
         $("#cultivo").empty();
         $("#fenologia").empty();
+        $("#diagnostico\\.continuar").html("Realizar <br>Diagnóstico").removeClass("d-none").addClass("d-block");
     },
     uno: function(){
         let cultivo = $("#cultivo option:selected").text();
@@ -95,7 +103,8 @@ var application = {
             $("#header\\.algoritmo").removeClass("d-none");
             $("#card\\.uno").fadeOut();
             $("#card\\.algoritmo").fadeIn();
-            $("#diagnostico\\.reset").removeClass("d-none");
+            $("#diagnostico\\.reset").removeClass("d-none").addClass("d-block");
+            $("#diagnostico\\.continuar").removeClass("d-block").addClass("d-none");
         }
     }
 }

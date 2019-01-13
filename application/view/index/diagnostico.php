@@ -12,7 +12,6 @@
                 <div class="media-body">
                     <h5>Bienvenido!</h5>
                     lorem ipsum huaso chileno
-                    <button class="btn mt-2 btn-outline-primary" id="diagnostico.bienvenida">Realizar <br>Diagnóstico</button>
                 </div>
                 <img alt="Campesino svg" src="img/campesino.svg" class="ml-3 w-50">
             </div>
@@ -41,7 +40,8 @@
             <img alt="termita" src="img/termita.svg" class="w-50 d-block mx-auto">
         </div>
         <div class="card-footer bg-secondary">
-            <button class="btn d-block mx-auto btn-outline-light d-none" id="diagnostico.reset">Volver a empezar</button>
+            <button class="btn d-block mx-auto btn-outline-primary" id="diagnostico.continuar">Realizar <br>Diagnóstico</button>
+            <button class="btn mx-auto btn-outline-light d-none" id="diagnostico.reset">Volver a empezar</button>
         </div>
     </div>
 </div>
