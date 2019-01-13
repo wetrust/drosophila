@@ -64,13 +64,23 @@ var application = {
         });
     },
     uno: function(){
-        $("#card\\.uno").fadeOut();
-        $("#card\\.dos").fadeIn();
-        $("#progreso").css({"width":"20%"}).animate({"width":"40%"}, "slow");
-        application.step = 2;
-        $("#fenologia").empty();
-        $.each(application.fenologia, function(i,element){
-            $("#fenologia").append('<option value="' + i + '" data-riesgo="' + element.riesgo +'">' + element.texto + '</option>');
-        });
+        let cultivo = $("#cultivo option:selected").text();
+
+        if (cultivo == "Arándanos"){
+            $("#card\\.uno").fadeOut();
+            $("#card\\.dos").fadeIn();
+            $("#progreso").css({"width":"20%"}).animate({"width":"40%"}, "slow");
+            application.step = 2;
+            $("#fenologia").empty();
+            $.each(application.fenologia, function(i,element){
+                $("#fenologia").append('<option value="' + i + '" data-riesgo="' + element.riesgo +'">' + element.texto + '</option>');
+            });
+        }
+        else{
+            $("#progreso").addClass("bg-danger").removeClass("bg-success").css({"width":"20%"}).animate({"width":"100%"}, "slow");
+            $("#header\\.algoritmo").removeClass("d-none");
+            $("#card\\.uno").fadeOut();
+            $("#card\\.algoritmo").fadeIn();
+        }
     }
 }
