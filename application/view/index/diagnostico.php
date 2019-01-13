@@ -16,6 +16,21 @@
         </div>
         <div class="card-body" id="card.uno" style="display:none">
             <h1 class="card-title text-center">Paso 1</h1>
+            <p class="text-center">Seleccione el tipo de cultivo presente en su campo</p>
+            <div class="form-group">
+                <label for="cultivo">Cultivo:</label>
+                <select class="form-control" id="cultivo"></select>
+            </div>
+            <button class="btn mt-2 btn-outline-primary" id="diagnostico.uno">Siguiente paso</button>
+        </div>
+        <div class="card-body" id="card.dos" style="display:none">
+            <h1 class="card-title text-center">Paso 2</h1>
+            <p class="text-center">Seleccione el estado fenológico de su cultivo</p>
+            <div class="form-group">
+                <label for="fenologia">Fenología:</label>
+                <select class="form-control" id="fenologia"></select>
+            </div>
+            <button class="btn mt-2 btn-outline-primary" id="diagnostico.dos">Siguiente paso</button>
         </div>
     </div>
 </div>

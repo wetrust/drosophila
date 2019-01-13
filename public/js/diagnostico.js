@@ -4,6 +4,10 @@ $(document).ready(function() {
     $("#diagnostico\\.bienvenida").on("click", function(){
         application.bienvenida();
     });
+
+    $("#diagnostico\\.uno").on("click", function(){
+        application.uno();
+    });
 });
 
 var application = {
@@ -53,5 +57,20 @@ var application = {
         $("#card\\.bienvenida").fadeOut();
         $("#card\\.uno").fadeIn();
         $("#progreso").css({"width":"100%"}).animate({"width":"20%"}, "slow");
+        application.step = 1;
+        $("#cultivo").empty();
+        $.each(application.cultivos, function(i,element){
+            $("#cultivo").append('<option value="' + i + '">' + element + '</option>');
+        });
+    },
+    uno: function(){
+        $("#card\\.uno").fadeOut();
+        $("#card\\.dos").fadeIn();
+        $("#progreso").css({"width":"20%"}).animate({"width":"40%"}, "slow");
+        application.step = 2;
+        $("#fenologia").empty();
+        $.each(application.fenologia, function(i,element){
+            $("#fenologia").append('<option value="' + i + '" data-riesgo="' + element.riesgo +'">' + element.texto + '</option>');
+        });
     }
 }
