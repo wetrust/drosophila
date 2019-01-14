@@ -6,6 +6,9 @@
         <div class="card-header bg-danger d-none" id="header.algoritmo">
             <h3 class="text-white text-center">Lo siento</h3>
         </div>
+        <div class="card-header bg-secondary d-none" id="header.riesgo">
+            <h3 class="text-white text-center">Riesgo de Drosophila Suzukii</h3>
+        </div>
         <div class="card-body p-0" id="card.bienvenida">
             <h1 class="card-title text-center mt-4 mx-4">Diagnóstico inical para determinar riesgo de Drosophila suzukii</h1>
             <div class="media mt-2 mx-4">
@@ -31,6 +34,10 @@
                 <label for="fenologia">Fenologia:</label>
                 <select class="form-control" id="fenologia"></select>
             </div>
+        </div>
+        <div class="card-body" id="card.riesgo" style="display:none">
+            <div class="alert" role="alert" id="text.riesgo"></div>
+            <p id="sugerencias.riesgo"></p>
         </div>
         <div class="card-body" id="card.algoritmo" style="display:none">
             <h1 class="card-title text-center">No hay algoritmo</h1>

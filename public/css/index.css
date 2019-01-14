@@ -35,3 +35,9 @@ body {
     background-position: top;
     background-size: cover;
 }
+
+.alert-amarillo{
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}

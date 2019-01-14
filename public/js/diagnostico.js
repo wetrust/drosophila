@@ -107,6 +107,7 @@ var application = {
             $("#card\\.dos").delay(100).fadeIn();
             $("#progreso").css({"width":"20%"}).animate({"width":"40%"}, "slow");
             application.step = 2;
+            application.cultivo = $("#cultivo").val();
             $("#fenologia").empty();
             $.each(application.fenologia, function(i,element){
                 $("#fenologia").append('<option value="' + i + '" data-riesgo="' + element.riesgo +'">' + element.texto + '</option>');
@@ -124,25 +125,38 @@ var application = {
         }
     },
     dos: function(){
-        let cultivo = $("#cultivo option:selected").text();
+        let fenologia = $("#fenologia option:selected").text();
+        let riesgo = $("#fenologia option:selected").data("riesgo");
 
-        if (cultivo == "Arándanos"){
-            $("#card\\.uno").fadeOut();
-            $("#card\\.dos").delay(100).fadeIn();
-            $("#progreso").css({"width":"20%"}).animate({"width":"40%"}, "slow");
-            application.step = 2;
-            $("#fenologia").empty();
-            $.each(application.fenologia, function(i,element){
-                $("#fenologia").append('<option value="' + i + '" data-riesgo="' + element.riesgo +'">' + element.texto + '</option>');
-            });
+        if (fenologia == "Seleccione"){
+            if (soporteVibracion = true){
+                navigator.vibrate(1000);
+                let options =  {
+                    content: "Seleccione la fenología del cultivo",style: "toast",timeout: 2000
+                }
+                $.snackbar(options);
+                $("#fenologia").addClass("bg-warning");
+            }
         }
         else{
-            $("#progreso").addClass("bg-danger").removeClass("bg-success").css({"width":"20%"}).animate({"width":"100%"}, "slow");
-            $("#header\\.algoritmo").removeClass("d-none");
-            $("#card\\.uno").fadeOut();
-            $("#card\\.algoritmo").delay(100).fadeIn();
-            $("#diagnostico\\.reset").removeClass("d-none").addClass("d-block");
-            $("#diagnostico\\.continuar").removeClass("d-block").addClass("d-none");
+            application.fenologico = $("#fenologia").val();
+            $("#fenologia").removeClass("bg-warning");
+            $("#header\\.riesgo").removeClass("d-none");
+            $("#card\\.dos").fadeOut();
+            $("#card\\.riesgo").delay(100).fadeIn();
+            if (riesgo == 0){
+                $("#text\\.riesgo").html('<h1 class="text-center"><strong>Sin Riesgo</strong></h1>').addClass("alert-success");
+                if (fenologia == "Post Cosecha"){
+                    $("#sugerencias\\.riesgo").html('Un poco tarde, no tenemos registros para determinar si su cultivo fue atacado por Drosophila Suzukii, como sugerencia le recomendamos:<br>Retirar fruta caida (remanente), más recomendaciones en el instructivo del Comité de Arándanos - Servicio Agrícola y Ganadero <a href="https://www.asoex.cl/images/drosophila/Poster_Drosofila_v6.pdf">Enlace externo</a>');
+                }else{
+                    $("#sugerencias\\.riesgo").html("Bien, es una buena señal pero no debemos descuidar nuestros cultivos, se sugieren las siguientes recomendaciones:<br>Implementar un sistema de trampeo y monitoreo como prevención");
+                }
+            } else if (riesgo == 1){
+                $("#text\\.riesgo").html('<h1 class="text-center"><strong>Riesgo</strong></h1>').addClass("alert-amarillo");
+            } else if (riesgo == 2){
+                $("#text\\.riesgo").html('<h1 class="text-center"><strong>Alto Riesgo</strong></h1>').addClass("alert-danger");
+            }
+            
         }
     }
 }
