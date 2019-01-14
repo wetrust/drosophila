@@ -69,6 +69,12 @@ var application = {
             case 3:
                 application.tres();
                 break;
+            case 4:
+                application.cuatro();
+                break;
+            case 5:
+                application.cinco();
+                break;
         }
     },
     bienvenida: function(){
@@ -179,7 +185,47 @@ var application = {
         $("#card\\.riesgo").fadeOut();
         $("#card\\.tres").delay(100).fadeIn();
         $("#progreso").css({"width":"40%"}).animate({"width":"60%"}, "slow");
-        application.step = 3;
+        application.step = 4;
         //http://api.meteored.cl/index.php?api_lang=cl&pais=196&affiliate_id=hz96md99ilvw
+    },
+    cuatro: function(){
+        if (navigator.geolocation)
+        {
+            navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+        }
+        else
+        {
+            let options =  {
+                content: "Su navegador no dispone de geolocalización",style: "toast",timeout: 3000
+            }
+            $.snackbar(options);
+        }
+        application.step = 5;
+        $("#diagnostico\\.continuar").attr("disabled", true);
+        //http://api.meteored.cl/index.php?api_lang=cl&pais=196&affiliate_id=hz96md99ilvw
+    },
+    cinco: function(){
+        $("#card\\.tres").fadeOut();
+        $("#card\\.cinco").delay(100).fadeIn();
+        $("#progreso").css({"width":"60%"}).animate({"width":"80%"}, "slow");
+        application.step = 6;
+        //http://api.meteored.cl/index.php?api_lang=cl&pais=196&affiliate_id=hz96md99ilvw
+    },
+    geoSuccess: function(position){
+        let options =  {
+            content: "Gracias, ubicando tu posicion",style: "toast",timeout: 3000
+        }
+        $.snackbar(options);
+        let startPos = position;
+        $("#diagnostico\\.continuar").attr("disabled", false);
+        $("#card\\.tres").append('<div class="alert alert-success" role="alert">Ahora puede continuar</div>');
+    },
+    geoError: function(){
+        let options =  {
+            content: "El usuario no ha autorizado",style: "toast",timeout: 3000
+        }
+        $.snackbar(options);
+        $("#card\\.tres").append('<div class="alert alert-success" role="alert">Debe seleccionar de forma manual su ubicación</div>');
+        $("#diagnostico\\.continuar").attr("disabled", false);
     }
 }

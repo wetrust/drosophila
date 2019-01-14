@@ -43,6 +43,21 @@
             <h1 class="card-title text-center">Paso 3</h1>
             <p class="text-center">Ya sabemos que su cultivo tiene un alto riesgo de ser atacado por la Drosophila Suzukii, ahora vamos a determinar la categoría de riesgo para lo cual necesitamos conocer la ubicación aproximada de su cultivo. Es recomendable que ejecute el test en la ubicación geográfica de su cultivo para una mayor precision.<br><br>Ahora el sistema le pedirá autorización para determinar su ubicación por gps, por favor autorice cuando el navegador se lo solicite. si no está disponible el gps podrá seleccionar su ubicación mediante una lista.</p>
         </div>
+        <div class="card-body" id="card.cinco" style="display:none">
+            <h1 class="card-title text-center">Paso 4</h1>
+            <div class="form-group">
+                <label for="trampas">¿Tiene trampas?</label>
+                <select class="form-control" id="trampas"><option value="0">Seleccione</option><option value="1">Si</option><option value="2">No</option></select>
+            </div>
+            <div class="form-group d-none" >
+                <label for="trampas">¿Has capturado?</label>
+                <select class="form-control" id="trampas"><option value="0">Seleccione</option><option value="1">Si</option><option value="2">No</option></select>
+            </div>
+            <div class="form-group d-none">
+                <label for="trampas">¿Has analizado?</label>
+                <select class="form-control" id="trampas"><option value="0">Seleccione</option><option value="1">Si</option><option value="2">No</option></select>
+            </div>
+        </div>
         <div class="card-body" id="card.algoritmo" style="display:none">
             <h1 class="card-title text-center">No hay algoritmo</h1>
             <p class="text-center">Todavía no podemos determinar el riesgo para este tipo de cultivo</p>
