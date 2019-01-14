@@ -81,6 +81,7 @@ var application = {
     reset: function(){
         $("#card\\.algoritmo").fadeOut();
         $("#header\\.algoritmo").fadeOut();
+        $("#card\\.riesgo").fadeOut();
         $("#card\\.bienvenida").delay(100).fadeIn();
         $("#progreso").css({"width":"100%"}).removeClass("bg-danger").addClass("bg-success");
         $("#diagnostico\\.reset").removeClass("d-block").addClass("d-none");
@@ -88,6 +89,7 @@ var application = {
         $("#cultivo").empty();
         $("#fenologia").empty();
         $("#diagnostico\\.continuar").html("Realizar <br>Diagnóstico").removeClass("d-none").addClass("d-block");
+        $("#sugerencias\\.riesgo").removeClass("alert-success alert-amarillo alert-danger");
     },
     uno: function(){
         let cultivo = $("#cultivo option:selected").text();
@@ -146,7 +148,7 @@ var application = {
             $("#card\\.riesgo").delay(100).fadeIn();
             if (riesgo == 0){
                 $("#text\\.riesgo").html('<h1 class="text-center"><strong>Sin Riesgo</strong></h1>').addClass("alert-success");
-                $("#sugerencias\\.riesgo").html("Bien, es una buena señal pero no debemos descuidar nuestros cultivos, se sugieren las siguientes recomendaciones:<br>Implementar un sistema de trampeo y monitoreo como prevención");
+                $("#sugerencias\\.riesgo").html("Bien, es una buena señal pero no debe descuidar sus cultivos, se sugiere las siguientes recomendaciones:<br><br>Implementar un sistema de trampeo y monitoreo como prevención");
                 $("#progreso").css({"width":"40%"}).animate({"width":"100%"}, "slow");
                 $("#diagnostico\\.reset").removeClass("d-none").addClass("d-block");
                 $("#diagnostico\\.continuar").removeClass("d-block").addClass("d-none");
