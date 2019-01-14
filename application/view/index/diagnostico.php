@@ -49,14 +49,15 @@
                 <label for="trampas">¿Tiene trampas?</label>
                 <select class="form-control" id="trampas"><option value="0">Seleccione</option><option value="1">Si</option><option value="2">No</option></select>
             </div>
-            <div class="form-group d-none" >
-                <label for="trampas">¿Has capturado?</label>
-                <select class="form-control" id="trampas"><option value="0">Seleccione</option><option value="1">Si</option><option value="2">No</option></select>
+            <div class="form-group d-none" id="captura.cinco">
+                <label for="capturado">¿Has capturado?</label>
+                <select class="form-control" id="capturado"><option value="0">Seleccione</option><option value="1">Si</option><option value="2">No</option></select>
             </div>
-            <div class="form-group d-none">
-                <label for="trampas">¿Has analizado?</label>
-                <select class="form-control" id="trampas"><option value="0">Seleccione</option><option value="1">Si</option><option value="2">No</option></select>
+            <div class="form-group d-none" id="analisis.cinco">
+                <label for="analisis">¿Has analizado?</label>
+                <select class="form-control" id="analisis"><option value="0">Seleccione</option><option value="1">Si</option><option value="2">No</option></select>
             </div>
+            <p class="text-center" id="sugerencia.cinco"></p>
         </div>
         <div class="card-body" id="card.algoritmo" style="display:none">
             <h1 class="card-title text-center">No hay algoritmo</h1>

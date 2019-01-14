@@ -8,6 +8,48 @@ $(document).ready(function() {
     $("#diagnostico\\.reset").on("click", function(){
         application.reset();
     });
+
+    $("#trampas").on("change", function(){
+        let valor = $(this).val();
+
+        if (valor == 1){
+            $("#sugerencia\\.cinco").html("");
+            $("#captura\\.cinco").removeClass("d-none");
+        }else if (valor == 2){
+            $("#sugerencia\\.cinco").html('Le recomendamos comprar e instalar trampas en su campo, toque el siguiente botón para solicitar <a class="btn btn-outline-success" href="https://api.whatsapp.com/send?phone=56983413781&text=Hola,%20necesito%20comprar%20una%20trampa%20para%20drosophila%20sizukii">Contactar</a>')
+        }
+        else{
+            $("#sugerencia\\.cinco").html("");
+        }
+    });
+
+    $("#capturado").on("change", function(){
+        let valor = $(this).val();
+
+        if (valor == 1){
+            $("#sugerencia\\.cinco").html("");
+            $("#analisis\\.cinco").removeClass("d-none");
+        }else if (valor == 2){
+            $("#sugerencia\\.cinco").html('Le recomendamos monitorizar sus trampas o asegurarse que el activo sea el apropiado, toque el siguiente botón para solicitar <a class="btn btn-outline-success" href="https://api.whatsapp.com/send?phone=56983413781&text=Hola,%20necesito%20comprar%20una%20trampa%20para%20drosophila%20sizukii">Contactar</a>')
+        }
+        else{
+            $("#sugerencia\\.cinco").html("");
+        }
+    });
+
+    $("#analisis").on("change", function(){
+        let valor = $(this).val();
+
+        if (valor == 1){
+            $("#sugerencia\\.cinco").html("");
+            $("#analisis\\.cinco").removeClass("d-none");
+        }else if (valor == 2){
+            $("#sugerencia\\.cinco").html('Le recomendamos realizar un analisis taxonómico a sus trampas,se recomiendan 3 por temporada, toque el siguiente botón para solicitar <a class="btn btn-outline-success" href="https://api.whatsapp.com/send?phone=56983413781&text=Hola,%20necesito%20un%20analisis%20taxonomico%20para%20drosophila%20sizukii">Contactar</a>')
+        }
+        else{
+            $("#sugerencia\\.cinco").html("");
+        }
+    });
 });
 
 var soporteVibracion = "vibrate" in navigator;
