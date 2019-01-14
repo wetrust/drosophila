@@ -132,7 +132,7 @@ var application = {
     dos: function(){
         let fenologia = $("#fenologia option:selected").text();
         let riesgo = $("#fenologia option:selected").data("riesgo");
-
+        application.step = 3;
         if (fenologia == "Seleccione"){
             if (soporteVibracion = true){
                 navigator.vibrate(1000);
