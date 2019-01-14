@@ -191,7 +191,7 @@ var application = {
     cuatro: function(){
         if (navigator.geolocation)
         {
-            navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+            navigator.geolocation.getCurrentPosition(application.geoSuccess, application.geoError);
         }
         else
         {
