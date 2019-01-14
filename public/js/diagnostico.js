@@ -89,7 +89,7 @@ var application = {
         $("#cultivo").empty();
         $("#fenologia").empty();
         $("#diagnostico\\.continuar").html("Realizar <br>Diagnóstico").removeClass("d-none").addClass("d-block");
-        $("#sugerencias\\.riesgo").removeClass("alert-success alert-amarillo alert-danger");
+        $("#text\\.riesgo").removeClass("alert-success alert-amarillo alert-danger");
     },
     uno: function(){
         let cultivo = $("#cultivo option:selected").text();
@@ -157,15 +157,15 @@ var application = {
                 if (fenologia == "Post Cosecha"){
                     $("#sugerencias\\.riesgo").html('Un poco tarde, no tenemos registros para determinar si su cultivo fue atacado por Drosophila Suzukii, como sugerencia le recomendamos:<br><br>Retirar fruta caida (remanente), más recomendaciones en el instructivo del Comité de Arándanos - Servicio Agrícola y Ganadero <a href="https://www.asoex.cl/images/drosophila/Poster_Drosofila_v6.pdf">Enlace externo</a>');
                 }else{
-                    $("#sugerencias\\.riesgo").html("Bien, es una buena señal pero no debemos descuidar nuestros cultivos, se sugieren las siguientes recomendaciones:<br>Implementar un sistema de trampeo y monitoreo como prevención");
+                    $("#sugerencias\\.riesgo").html("Su cultivo está a un paso de estar en alto riesgo, es altamente recomendado implementar un sistema de trampeo, monitoreo y análisis taxonómico de las capturas.");
                 }
                 $("#progreso").css({"width":"40%"}).animate({"width":"100%"}, "slow");
                 $("#diagnostico\\.reset").removeClass("d-none").addClass("d-block");
                 $("#diagnostico\\.continuar").removeClass("d-block").addClass("d-none");
             } else if (riesgo == 2){
                 $("#text\\.riesgo").html('<h1 class="text-center"><strong>Alto Riesgo</strong></h1>').addClass("alert-danger");
+                $("#sugerencias\\.riesgo").html("Su cultivo se encuentra en un alto riesgo de ser atacado por la drosophila Suzukii, usted <strong>debe tener</strong> implementado un sistema de trampeo, monitoreo y análisis taxonómico de las capturas.<br><br>Continue el diagnóstico para determinar la categoria de riesgo de su cultivo.");
             }
-            
         }
     }
 }
