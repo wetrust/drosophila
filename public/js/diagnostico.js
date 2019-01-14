@@ -66,6 +66,9 @@ var application = {
             case 2:
                 application.dos();
                 break;
+            case 3:
+                application.tres();
+                break;
         }
     },
     bienvenida: function(){
@@ -97,12 +100,12 @@ var application = {
         if (cultivo == "Seleccione"){
             if (soporteVibracion = true){
                 navigator.vibrate(1000);
-                let options =  {
-                    content: "Seleccione un cultivo",style: "toast",timeout: 2000
-                }
-                $.snackbar(options);
-                $("#cultivo").addClass("bg-warning");
             }
+            let options =  {
+                content: "Seleccione la fenología del cultivo",style: "toast",timeout: 2000
+            }
+            $.snackbar(options);
+            $("#fenologia").addClass("bg-warning");
         }
         else if (cultivo == "Arándanos"){
             $("#card\\.uno").fadeOut();
@@ -133,12 +136,12 @@ var application = {
         if (fenologia == "Seleccione"){
             if (soporteVibracion = true){
                 navigator.vibrate(1000);
-                let options =  {
-                    content: "Seleccione la fenología del cultivo",style: "toast",timeout: 2000
-                }
-                $.snackbar(options);
-                $("#fenologia").addClass("bg-warning");
             }
+            let options =  {
+                content: "Seleccione la fenología del cultivo",style: "toast",timeout: 2000
+            }
+            $.snackbar(options);
+            $("#fenologia").addClass("bg-warning");
         }
         else{
             application.fenologico = $("#fenologia").val();
@@ -163,9 +166,20 @@ var application = {
                 $("#diagnostico\\.reset").removeClass("d-none").addClass("d-block");
                 $("#diagnostico\\.continuar").removeClass("d-block").addClass("d-none");
             } else if (riesgo == 2){
+                if (soporteVibracion = true){
+                    navigator.vibrate(1000);
+                }
                 $("#text\\.riesgo").html('<h1 class="text-center"><strong>Alto Riesgo</strong></h1>').addClass("alert-danger");
                 $("#sugerencias\\.riesgo").html("Su cultivo se encuentra en un alto riesgo de ser atacado por la drosophila Suzukii, usted <strong>debe tener</strong> implementado un sistema de trampeo, monitoreo y análisis taxonómico de las capturas.<br><br>Continue el diagnóstico para determinar la categoria de riesgo de su cultivo.");
             }
         }
+    },
+    tres: function(){
+        $("#header\\.riesgo").addClass("d-none");
+        $("#card\\.riesgo").fadeOut();
+        $("#card\\.tres").delay(100).fadeIn();
+        $("#progreso").css({"width":"40%"}).animate({"width":"60%"}, "slow");
+        application.step = 3;
+        //http://api.meteored.cl/index.php?api_lang=cl&pais=196&affiliate_id=hz96md99ilvw
     }
 }
