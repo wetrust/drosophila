@@ -43,17 +43,13 @@ $(document).ready(function() {
 
     $("#analisis").on("change", function(){
         let valor = $(this).val();
-
         if (valor == 1){
             $("#sugerencia\\.cinco").html("");
-            $("#analisis\\.cinco").removeClass("d-none");
         }else if (valor == 2){
             $("#sugerencia\\.cinco").html('Le recomendamos realizar un analisis taxonómico a sus trampas,se recomiendan 3 por temporada, toque el siguiente botón para solicitar <a class="btn btn-outline-success" href="https://api.whatsapp.com/send?phone=56983413781&text=Hola,%20necesito%20un%20analisis%20taxonomico%20para%20drosophila%20sizukii">Contactar</a>')
-            $("#analisis\\.cinco").addClass("d-none");
         }
         else{
             $("#sugerencia\\.cinco").html("");
-            $("#analisis\\.cinco").addClass("d-none");
         }
     });
 });
@@ -258,6 +254,8 @@ var application = {
         $("#progreso").css({"width":"60%"}).animate({"width":"80%"}, "slow");
         application.step = 6;
         //http://api.meteored.cl/index.php?api_lang=cl&pais=196&affiliate_id=hz96md99ilvw
+        $("#diagnostico\\.reset").addClass("d-block").removeClass("d-none");
+        $("#diagnostico\\.continuar").removeClass("d-block").addClass("d-none");
     },
     geoSuccess: function(position){
         let options =  {
