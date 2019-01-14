@@ -37,7 +37,7 @@
         </div>
         <div class="card-body" id="card.riesgo" style="display:none">
             <div class="alert" role="alert" id="text.riesgo"></div>
-            <p id="sugerencias.riesgo"></p>
+            <p id="sugerencias.riesgo" class="text-justify"></p>
         </div>
         <div class="card-body" id="card.algoritmo" style="display:none">
             <h1 class="card-title text-center">No hay algoritmo</h1>

@@ -147,13 +147,19 @@ var application = {
             if (riesgo == 0){
                 $("#text\\.riesgo").html('<h1 class="text-center"><strong>Sin Riesgo</strong></h1>').addClass("alert-success");
                 $("#sugerencias\\.riesgo").html("Bien, es una buena señal pero no debemos descuidar nuestros cultivos, se sugieren las siguientes recomendaciones:<br>Implementar un sistema de trampeo y monitoreo como prevención");
+                $("#progreso").css({"width":"40%"}).animate({"width":"100%"}, "slow");
+                $("#diagnostico\\.reset").removeClass("d-none").addClass("d-block");
+                $("#diagnostico\\.continuar").removeClass("d-block").addClass("d-none");
             } else if (riesgo == 1){
                 $("#text\\.riesgo").html('<h1 class="text-center"><strong>Riesgo</strong></h1>').addClass("alert-amarillo");
                 if (fenologia == "Post Cosecha"){
-                    $("#sugerencias\\.riesgo").html('Un poco tarde, no tenemos registros para determinar si su cultivo fue atacado por Drosophila Suzukii, como sugerencia le recomendamos:<br>Retirar fruta caida (remanente), más recomendaciones en el instructivo del Comité de Arándanos - Servicio Agrícola y Ganadero <a href="https://www.asoex.cl/images/drosophila/Poster_Drosofila_v6.pdf">Enlace externo</a>');
+                    $("#sugerencias\\.riesgo").html('Un poco tarde, no tenemos registros para determinar si su cultivo fue atacado por Drosophila Suzukii, como sugerencia le recomendamos:<br><br>Retirar fruta caida (remanente), más recomendaciones en el instructivo del Comité de Arándanos - Servicio Agrícola y Ganadero <a href="https://www.asoex.cl/images/drosophila/Poster_Drosofila_v6.pdf">Enlace externo</a>');
                 }else{
                     $("#sugerencias\\.riesgo").html("Bien, es una buena señal pero no debemos descuidar nuestros cultivos, se sugieren las siguientes recomendaciones:<br>Implementar un sistema de trampeo y monitoreo como prevención");
                 }
+                $("#progreso").css({"width":"40%"}).animate({"width":"100%"}, "slow");
+                $("#diagnostico\\.reset").removeClass("d-none").addClass("d-block");
+                $("#diagnostico\\.continuar").removeClass("d-block").addClass("d-none");
             } else if (riesgo == 2){
                 $("#text\\.riesgo").html('<h1 class="text-center"><strong>Alto Riesgo</strong></h1>').addClass("alert-danger");
             }
